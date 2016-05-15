@@ -24,13 +24,10 @@ public class MoneyTransferController {
 
   @RequestMapping(method = RequestMethod.POST)
   public Observable<CreateMoneyTransferResponse> createMoneyTransfer(@Validated @RequestBody CreateMoneyTransferRequest request) {
-	  System.out.println("test test test");
-	  System.out.println("test " + request.getFromAccountId() + " to " + request.getToAccountId());
     TransferDetails transferDetails = new TransferDetails(
             new EntityIdentifier(request.getFromAccountId()),
             new EntityIdentifier(request.getToAccountId()),
             request.getAmount());
-    System.out.println("from " + transferDetails.getFromAccountId() + " to " + transferDetails.getToAccountId());
     return moneyTransferService.transferMoney(transferDetails)
             .map(entityAndEventInfo -> new CreateMoneyTransferResponse(entityAndEventInfo.getEntityIdentifier().getId()));
   }

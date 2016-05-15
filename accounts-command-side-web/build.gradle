@@ -3,7 +3,8 @@ dependencies {
     compile project(":accounts-command-side-backend")
     compile project(":common-web")
 
-    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-amqp:1.3.5.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-web"
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
     testCompile "net.chrisrichardson.eventstore.client:eventstore-jdbc_2.10:$eventStoreClientVersion"

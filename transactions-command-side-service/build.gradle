@@ -1,4 +1,7 @@
+group = 'birkholm'
+
 apply plugin: 'spring-boot'
+apply plugin: 'docker'
 
 apply plugin: VerifyEventStoreEnvironmentPlugin
 
@@ -6,6 +9,7 @@ dependencies {
     compile project(":transactions-command-side-web")
     compile project(":common-swagger")
 
+	compile "org.springframework.boot:spring-boot-starter-amqp:1.3.5.RELEASE"
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-actuator"
 
@@ -17,5 +21,17 @@ dependencies {
 
 test {
     ignoreFailures true
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('build/libs/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
 }
 

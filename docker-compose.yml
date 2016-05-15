@@ -7,8 +7,8 @@ accountscommandside:
   ports:
     - "8080:8080"
   environment:
-    EVENTUATE_API_KEY_ID:
-    EVENTUATE_API_KEY_SECRET:
+    EVENTUATE_API_KEY_ID: 62BB0DU84C3YXAM79KKC9I21E 
+    EVENTUATE_API_KEY_SECRET: BAfjA8YmHFiV8go7PMAYiBkY07X+9ZR2y2Nn0RKWqyM 
 
 transactionscommandside:
   image: java:8
@@ -19,8 +19,8 @@ transactionscommandside:
   ports:
     - "8082:8080"
   environment:
-    EVENTUATE_API_KEY_ID:
-    EVENTUATE_API_KEY_SECRET:
+    EVENTUATE_API_KEY_ID: 62BB0DU84C3YXAM79KKC9I21E 
+    EVENTUATE_API_KEY_SECRET: BAfjA8YmHFiV8go7PMAYiBkY07X+9ZR2y2Nn0RKWqyM 
 
 
 accountsqueryside:
@@ -34,8 +34,8 @@ accountsqueryside:
   links:
     - mongodb
   environment:
-    EVENTUATE_API_KEY_ID:
-    EVENTUATE_API_KEY_SECRET:
+    EVENTUATE_API_KEY_ID: 62BB0DU84C3YXAM79KKC9I21E 
+    EVENTUATE_API_KEY_SECRET: BAfjA8YmHFiV8go7PMAYiBkY07X+9ZR2y2Nn0RKWqyM 
     SPRING_DATA_MONGODB_URI: mongodb://mongodb/mydb
 
 mongodb:

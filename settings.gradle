@@ -1,3 +1,5 @@
+include 'monolithic-service'
+
 include 'testutil'
 include 'common-web'
 include 'common-swagger'
@@ -15,7 +17,7 @@ include 'accounts-query-side-web'
 
 include 'backend-integration-tests'
 
-include 'monolithic-service'
+
 
 include 'accounts-command-side-service'
 include 'accounts-query-side-service'
@@ -23,6 +25,7 @@ include 'transactions-command-side-service'
 
 include 'e2e-test'
 
-rootProject.name = 'java-spring-event-sourcing-example'
+//rootProject.name = 'java-spring-event-sourcing-example'
+rootProject.name = 'java-mono'
 
 

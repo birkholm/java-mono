@@ -3,6 +3,7 @@ dependencies {
     compile project(":accounts-query-side-backend")
     compile project(":common-web")
 
+	compile "org.springframework.boot:spring-boot-starter-amqp:1.3.5.RELEASE"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
 }

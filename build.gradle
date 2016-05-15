@@ -4,11 +4,13 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
     }
 }
 
 allprojects {
-    group = "net.chrisrichardson.eventstore"
+    //group = "net.chrisrichardson.eventstore"
+	group = 'springio'
 }
 
 
@@ -17,12 +19,22 @@ task wrapper(type: Wrapper) {
 }
 
 subprojects {
+	apply plugin: 'docker'
+	apply plugin: 'eclipse'
     apply plugin: 'java'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
-    repositories {
-        mavenCentral()
-        eventuateMavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
-    }
+	repositories {
+		maven { url "http://mavenrepo.eventuate.io/release" }
+    	mavenCentral()
+		maven { url "http://maven.springframework.org/release" }
+	}
+    //repositories {
+    //    mavenCentral()
+    //    http://mavenrepo.eventuate.io/release
+    //    //eventuateMavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
+    //}
 }
+
+

@@ -17,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
+import java.time.Duration;
+import java.time.Instant;
 
 import static net.chrisrichardson.eventstore.javaexamples.banking.backend.queryside.accounts.MoneyUtil.toIntegerRepr;
 
@@ -39,7 +41,11 @@ public class AccountQueryWorkflow implements CompoundEventHandler {
     AccountOpenedEvent event = de.event();
     
     String id = de.getEntityIdentifier().getId();
+    Instant start = Instant.now();
     String account = "" + (accountQueryService.findMaxId() + 1);
+    Instant end = Instant.now();
+    Duration dur = Duration.between(start, end);
+    System.out.print("tid ialt : " + dur);
     String eventId = de.eventId().asString();
     logger.info("**************** account version=" + id + ", " + eventId);
     BigDecimal initialBalance = event.getInitialBalance();
@@ -49,7 +55,6 @@ public class AccountQueryWorkflow implements CompoundEventHandler {
 
   @EventHandlerMethod
   public Observable<Object> recordTransfer(DispatchedEvent<MoneyTransferCreatedEvent> de) {
-	  System.out.println("så nåede det recordtransfer");
     String eventId = de.eventId().asString();
     String moneyTransferId = de.getEntityIdentifier().getId();
     String fromAccountId = de.event().getDetails().getFromAccountId().getId();

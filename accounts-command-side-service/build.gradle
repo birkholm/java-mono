@@ -1,12 +1,23 @@
+group = 'birkholm'
+
 apply plugin: VerifyMongoDBConfigurationPlugin
 apply plugin: VerifyEventStoreEnvironmentPlugin
 
 apply plugin: 'spring-boot'
+apply plugin: 'docker'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+	maven { url "http://mavenrepo.eventuate.io/release" }
+	maven { url "http://maven.springframework.org/release" }
+}
 
 dependencies {
     compile project(":accounts-command-side-web")
     compile project(":common-swagger")
 
+    compile "org.springframework.boot:spring-boot-starter-amqp:1.3.5.RELEASE"
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-actuator"
 
@@ -19,5 +30,17 @@ dependencies {
 
 test {
     ignoreFailures true
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('build/libs/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
 }
 

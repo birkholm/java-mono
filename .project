@@ -10,10 +10,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.springsource.ide.eclipse.gradle.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
@@ -88,6 +94,168 @@
 						<arguments>1.0-projectRelativePath-equals-true-false-e2e-test</arguments>
 					</matcher>
 				</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190635</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-command-side-backend</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190697</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-command-side-service</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190700</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-command-side-web</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190702</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-query-side-backend</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190706</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-query-side-service</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190709</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-accounts-query-side-web</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190711</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-backend-integration-tests</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190716</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-common-backend</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190720</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-common-swagger</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190724</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-common-web</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190729</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-e2e-test</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190733</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-monolithic-service</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190736</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-testutil</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190739</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-transactions-command-side-backend</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190742</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-transactions-command-side-service</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190746</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-transactions-command-side-web</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190754</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-build</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1457690190757</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-projectRelativePath-matches-false-false-.gradle</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
